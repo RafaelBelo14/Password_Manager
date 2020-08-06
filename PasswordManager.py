@@ -1,18 +1,19 @@
-#!/usr/bin/python3
+# Ideia copied from Kalle Hallden youtube channel
+# Changes: User interface; 
+#          More choices on the program
+
+# To do: encrypt passwords on database (comming soon)
 
 import sqlite3
 from hashlib import sha256
 import tkinter as tk
-import cryptography
 
 import sys
 
-ADMIN_PASSWORD = "112233"
+ADMIN_PASSWORD = "" #Add a password of you choice to autheticate your db
 
 
 def second_window():
-
-    #GESTÃO DAS PASSWORDS DENTRO DA DB
 
     app = tk.Tk()
 
@@ -154,9 +155,6 @@ def delete_password(service, admin_pass, instruction, entry):
 def quit():
     sys.exit()
 
-#CODIGO INICIAL
-
-#GESTÃO DA PASSWORD DA DB
 p_app = tk.Tk()
 
 conn = sqlite3.connect('pass_manager.db')
